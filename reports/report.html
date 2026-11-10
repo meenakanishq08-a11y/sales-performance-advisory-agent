@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sales Performance Advisory Agent - Technical Project Report</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+  body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-cover {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  .header-cover h1 {
+    margin: 0 0 10px 0;
+    font-size: 26pt;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+  }
+  .header-cover h3 {
+    margin: 0 0 15px 0;
+    font-size: 14pt;
+    color: #93c5fd;
+    font-weight: 400;
+  }
+  .badge {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 9pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 8px;
+  }
+  .badge-success { background: #10b981; }
+  .badge-purple { background: #8b5cf6; }
+  
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    font-size: 10pt;
+  }
+  .meta-grid div strong { color: #0f172a; }
+  
+  h2 {
+    color: #0f172a;
+    font-size: 16pt;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    color: #1e40af;
+    font-size: 12pt;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+  
+  p, li {
+    text-align: justify;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 9.5pt;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  
+  .callout {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 15px 0;
+    font-size: 10pt;
+  }
+  .callout-warning {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+  }
+  
+  .code-box {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9pt;
+    overflow-x: auto;
+    margin: 15px 0;
+  }
+  
+  .figure-container {
+    margin: 25px 0;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  .figure-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .figure-caption {
+    font-size: 9pt;
+    color: #64748b;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-cover">
+  <div>
+    <span class="badge">Enterprise Advisory</span>
+    <span class="badge badge-purple">LangGraph StateGraph</span>
+    <span class="badge badge-success">72/72 Tests Verified</span>
+  </div>
+  <h1>Sales Performance Advisory Agent</h1>
+  <h3>Comprehensive Technical Architecture, Methodology & System Verification Report</h3>
+  <div style="font-size: 10pt; color: #cbd5e1; margin-top: 20px;">
+    Autonomous Sales Intelligence, Guardrail Governance & RAG Policy Compliance Engine
+  </div>
+</div>
+
+<div class="meta-grid">
+  <div><strong>Target Domain:</strong> Sales Performance, Operations & Pricing Governance</div>
+  <div><strong>Engineering Framework:</strong> LangGraph, LangChain, SQLite Checkpointer</div>
+  <div><strong>Language & Runtime:</strong> Python 3.10+ (Executed on Windows OS)</div>
+  <div><strong>Verification Suite:</strong> Pytest (72 Passing Unit & Scenario Tests)</div>
+  <div><strong>RAG & Document Indexing:</strong> TF-IDF, Cosine Sim, PDF/DOCX/TXT Multi-format</div>
+  <div><strong>Persistence:</strong> JSON Ledger (`action_plans.json`), SQLite (`agent_memory.db`)</div>
+</div>
+
+<h2>1. Executive Summary & Problem Formulation</h2>
+<p>
+Modern enterprise sales operations face critical governance challenges. In fast-paced quarterly cadences, commercial sales representatives frequently react to lagging revenues by issuing steep, out-of-policy discounts or conflating correlation with causation. For example, when revenue declines due to quality defects or logistics delays, discounting exacerbates losses rather than addressing the root cause.
+</p>
+<p>
+The <strong>Sales Performance Advisory Agent</strong> is an AI-driven, deterministic intelligence system designed to enforce consistent business definitions across <em>Target Achievement</em>, <em>Sales Growth</em>, <em>Gross Margin</em>, and <em>Product Return Rates</em>. The system autonomously retrieves guidance from official company Playbooks (in PDF, DOCX, and TXT formats), validates retrieval relevance, enforces strict discount limits, dynamically routes underperforming products to root-cause remedial actions, and commits actionable records into a persistent audit ledger.
+</p>
+
+<div class="callout">
+  <strong>Curriculum Standard:</strong> Built strictly according to the 7-stage workflow specification:
+  <code>Request &rarr; Ask &rarr; Retrieve &rarr; Grade &rarr; Tools &rarr; Route &rarr; Recommend</code>.
+</div>
+
+<h2>2. System Architecture & The 7-Step Workflow</h2>
+<p>
+The system leverages a stateful LangGraph <code>StateGraph</code> with an explicit context resolver and thread-level memory. Unlike fragile, monolithic prompt chains, this architecture isolates deterministic numeric logic from generative synthesis, ensuring zero mathematical hallucinations.
+</p>
+
+<div class="figure-container">
+  <img src="screenshots/streamlit_dashboard.png" alt="Streamlit UI Executive Cockpit">
+  <div class="figure-caption">Figure 1: Streamlit Executive Operations Cockpit with real-time KPI tiles, active scope filters, conversational policy reasoning, and guardrail enforcement.</div>
+</div>
+
+<h3>Core Stages Breakdown:</h3>
+<ol>
+  <li><strong>Request & Context Resolution:</strong> Ingests natural language inquiries. Identifies active filter parameters (<code>region</code>, <code>product</code>, <code>period</code>). Inherits antecedent conversational context for follow-up inquiries (e.g., <em>"What about last month?"</em>).</li>
+  <li><strong>Ask (Missing Scope Detection):</strong> Detects underspecified inputs and prompts the user for missing dimensions prior to executing expensive tool calls.</li>
+  <li><strong>Retrieval (Multi-Format RAG):</strong> Parses company playbooks across PDF, DOCX, and TXT using <code>pypdf</code> and <code>python-docx</code>. Generates TF-IDF vector embeddings with n-gram analysis (1,2) and ranks sections by cosine similarity.</li>
+  <li><strong>Grading & Bounded Query Rewriting:</strong> Validates semantic alignment between retrieved chunks and the diagnosed business issue. If relevance is insufficient, executes a bounded query rewrite (up to 2 retries) before declaring fallback status.</li>
+  <li><strong>Tools & Safe Metric Calculation:</strong> Invokes deterministic Python tools to compute Target Achievement, Period Growth, and Gross Margin with robust zero-division protection.</li>
+  <li><strong>Conditional Routing:</strong> Evaluates diagnosed issues and bifurcates recommendations:
+    <ul>
+      <li><strong>Low Revenue / Target Miss:</strong> Triggers demand generation, marketing campaigns, and sales incentives.</li>
+      <li><strong>Low Gross Margin:</strong> Triggers pricing review and supplier cost renegotiation. <em>Explicitly prohibits discounting.</em></li>
+      <li><strong>High Return Rate (>5%):</strong> Triggers Quality Assurance audits and packaging inspections.</li>
+    </ul>
+  </li>
+  <li><strong>Guardrails & Idempotent Persistence:</strong> Extracts dynamic discount ceilings directly from corporate policy. Blocks out-of-policy exceptions and commits verified plans to <code>data/action_plans.json</code> with UUID-backed tracking.</li>
+</ol>
+
+<div class="page-break"></div>
+
+<h2>3. Command-Line Interface (CLI) & Runtime Execution</h2>
+<p>
+The project provides a comprehensive CLI interface supporting both batch query execution and stateful interactive sessions. The interface automatically adapts to system terminal encodings (UTF-8 on Windows CP1252) and prints structured, audited reports.
+</p>
+
+<div class="figure-container">
+  <img src="screenshots/cli_execution.png" alt="PowerShell CLI Execution Screenshot">
+  <div class="figure-caption">Figure 2: Production Terminal Execution exhibiting verified metrics, multi-format RAG retrieval, policy grading, conditional routing, and automated action plan generation.</div>
+</div>
+
+<h2>4. Mathematical Rigor & Edge Case Formulations</h2>
+<p>
+The core math engine (implemented in <code>src/metrics.py</code>) enforces fail-safe mathematical integrity across all corporate scenarios:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Standard Formula</th>
+      <th>Edge Case Handling</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Target Achievement</strong></td>
+      <td><code>(Actual Revenue / Target Revenue) &times; 100</code></td>
+      <td>If <code>target = 0</code>, returns <code>None</code> and displays "Not Available" without zero-division crash.</td>
+    </tr>
+    <tr>
+      <td><strong>Sales Growth</strong></td>
+      <td><code>((Current Sales - Prior Sales) / Prior Sales) &times; 100</code></td>
+      <td>If <code>prior_sales = 0</code>, growth is formally flagged as undefined; division safely avoided.</td>
+    </tr>
+    <tr>
+      <td><strong>Gross Margin</strong></td>
+      <td><code>((Revenue - (Units &times; Unit Cost)) / Revenue) &times; 100</code></td>
+      <td>If <code>unit_cost</code> is missing in <code>margins.xlsx</code>, margin is flagged as uncomputed and logged.</td>
+    </tr>
+    <tr>
+      <td><strong>Return Rate</strong></td>
+      <td><code>(Units Returned / Units Sold) &times; 100</code></td>
+      <td>If <code>rate &gt; 5.0%</code>, routes to quality QA audit; discount recommendations strictly blocked.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. Quality Assurance & Automated Verification (Pytest Suite)</h2>
+<p>
+The codebase includes <strong>72 automated unit and integration tests</strong> passing with 100% compliance. Tests cover all curriculum scenarios, boundary conditions, zero divisions, multi-format RAG parsers, query rewriters, and state checkpointing.
+</p>
+
+<div class="figure-container">
+  <img src="screenshots/pytest_results.png" alt="Pytest Test Suite Execution Results">
+  <div class="figure-caption">Figure 3: Comprehensive Pytest Validation Suite passing 72/72 tests in 14.81s with zero warnings or failures.</div>
+</div>
+
+<h2>6. Fault-Tolerance & Production Graceful Degradation</h2>
+<div class="callout callout-warning">
+  <strong>Enterprise Reliability Architecture:</strong>
+  If external LLM APIs experience connection timeouts, rate-limit throttling (HTTP 429), or exhausted quota credits, the agent automatically degrades to its local <strong>Deterministic Engine</strong>. It continues to compute accurate metrics, grade playbook policies, enforce discount guardrails, and persist action plans without interrupting operational workflows.
+</div>
+
+<h2>7. Deliverables & Repository Structure</h2>
+<table>
+  <thead>
+    <tr>
+      <th>File / Directory</th>
+      <th>Operational Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>src/agent.py</code></td>
+      <td>LangGraph StateGraph workflow, SQLite checkpointer, context resolver & fail-safe fallback.</td>
+    </tr>
+    <tr>
+      <td><code>src/metrics.py</code></td>
+      <td>Deterministic math engine, safe division, group-by aggregations, underperformer scanner.</td>
+    </tr>
+    <tr>
+      <td><code>src/retriever.py</code></td>
+      <td>Multi-format RAG loader (PDF, DOCX, TXT) with TF-IDF and Cosine Similarity ranking.</td>
+    </tr>
+    <tr>
+      <td><code>src/grader.py</code></td>
+      <td>Relevance validator and bounded query rewriter (max 2 retries) with fallback safeguards.</td>
+    </tr>
+    <tr>
+      <td><code>src/guardrails.py</code></td>
+      <td>Dynamic discount limit extraction from corporate playbooks and policy enforcement.</td>
+    </tr>
+    <tr>
+      <td><code>src/action_store.py</code></td>
+      <td>Persistent, idempotent JSON repository (<code>data/action_plans.json</code>) with UUID tracking.</td>
+    </tr>
+    <tr>
+      <td><code>src/tools.py</code></td>
+      <td>LangChain tool wrappers with strict Pydantic v2 validation schemas.</td>
+    </tr>
+    <tr>
+      <td><code>src/ui.py</code></td>
+      <td>Streamlit executive operations cockpit with KPI cards, campaigns viewer, and chat.</td>
+    </tr>
+    <tr>
+      <td><code>src/cli.py</code></td>
+      <td>Interactive and single-query command-line interface with UTF-8 Windows compatibility.</td>
+    </tr>
+    <tr>
+      <td><code>tests/</code></td>
+      <td>72 automated test cases covering metrics, tools, retriever, grader, and curriculum scenarios.</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

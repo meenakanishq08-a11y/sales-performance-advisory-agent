@@ -1,0 +1,62 @@
+[
+  {
+    "plan_id": "AP-849F41C3",
+    "timestamp": "2026-10-25T15:26:21.829997+00:00",
+    "issue_type": "HIGH_RETURNS",
+    "region": "South",
+    "product": "Tab-X",
+    "month": "2026-09",
+    "proposed_action": "Quarantine hardware batch and provide customer integration training.",
+    "discount_pct": null,
+    "approval_status": "STANDARD",
+    "owner": "QA Team"
+  },
+  {
+    "plan_id": "AP-7065D699",
+    "timestamp": "2026-10-25T15:26:53.766772+00:00",
+    "issue_type": "HIGH_RETURNS",
+    "region": "South",
+    "product": "Tab-X",
+    "month": "2026-09",
+    "proposed_action": "Quarantine hardware batch and provide customer integration training.",
+    "discount_pct": null,
+    "approval_status": "STANDARD",
+    "owner": "QA Team"
+  },
+  {
+    "plan_id": "AP-F4ECD39E",
+    "timestamp": "2026-10-25T15:30:35.688112+00:00",
+    "issue_type": "HIGH_RETURNS",
+    "region": "South",
+    "product": "Tab-X",
+    "month": "2026-09",
+    "proposed_action": "Quarantine hardware batch and provide customer integration training.",
+    "discount_pct": null,
+    "approval_status": "STANDARD",
+    "owner": "QA Team"
+  },
+  {
+    "plan_id": "AP-54724972",
+    "timestamp": "2026-10-25T15:34:19.312810+00:00",
+    "issue_type": "HIGH_RETURNS",
+    "region": "South",
+    "product": "Tab-X",
+    "month": "2026-09",
+    "proposed_action": "Quarantine hardware batch and provide customer integration training.",
+    "discount_pct": null,
+    "approval_status": "STANDARD",
+    "owner": "QA Team"
+  },
+  {
+    "plan_id": "AP-846F0155",
+    "timestamp": "2026-10-26T14:45:19.334168+00:00",
+    "issue_type": "HIGH_RETURNS",
+    "region": "South",
+    "product": "Tab-X",
+    "month": "2026-09",
+    "proposed_action": "Quarantine hardware batch and provide customer integration training.",
+    "discount_pct": null,
+    "approval_status": "STANDARD",
+    "owner": "QA Team"
+  }
+]
